@@ -15,7 +15,7 @@ Questo programma, realizzato in Python, consente di verificare la disponibilità
 1. Clona o scarica il repository sul tuo computer.
 2. Assicurati di avere Python installato.
 3. Installa le dipendenze eseguendo il comando: `pip install -r requirements.txt`.
-4. Esegui il programma con il comando: `python main.py`.
+4. Esegui il programma con il comando: `python sitebot.py`.
 5. Segui le istruzioni per configurare il programma inserendo i dati necessari (URL della palestra, dati di accesso, preferenze di notifica, ecc.).
 6. Il programma inizierà a monitorare la disponibilità dei posti e ti notificherà in caso di posti disponibili.
 
