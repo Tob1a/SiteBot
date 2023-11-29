@@ -1,6 +1,7 @@
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By 
+import time
 
 class search():
     def __init__(self,url,OrarioMax,OrarioMin,driver):
@@ -10,14 +11,19 @@ class search():
         self.driver=driver
 
 
-        driver = driver.get(self.url)
+        self.driver.get(self.url)
+
+        
+        time.sleep(4)
 
 
-        #aspetta finche' la sbarra non e' cliccabile
-        wait= WebDriverWait(driver, 10)
-        wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'px-2 vue-slider vue-slider-ltr')))
+        elem1 = self.driver.find_element(By.XPATH, '//*[@id="page-body"]/div[2]/div[1]/div/div[2]/div/div[1]/div[2]/div/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]')
+        elem2 = self.driver.find_element(By.XPATH, '//*[@id="page-body"]/div[2]/div[1]/div/div[2]/div/div[1]/div[2]/div/div/div[2]/div/div[2]/div[2]/div/div[3]/div[1]')
+
+        
+        ActionChains(self.driver).drag_and_drop_by_offset(elem1, self.orariomin, 0).perform()
+        ActionChains(self.driver).drag_and_drop_by_offset(elem2, self.orariomax, 0).perform()
+        time.sleep(2)
 
 
-        liberi = driver.find_element(By.TAG_NAME, 'row align-items-center')
-
-        return liberi
+        self.liberi = self.driver.find_elements(By.XPATH, "//div[@class='col-6 col-lg-8']")

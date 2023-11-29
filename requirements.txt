@@ -1,0 +1,5 @@
+Python3
+Pip3
+Selenium
+Chrome
+Linux
