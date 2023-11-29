@@ -4,6 +4,9 @@ from output import output
 import time
 import threading
 
+#per il requirements.txt usare il comando pipreqs /home/tobu/Documenti/GitHub/SiteBot/
+
+
 class sitebot:
 
     def __init__(self) -> None:
