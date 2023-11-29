@@ -11,7 +11,7 @@ class sitebot:
 
     def __init__(self) -> None:
         pass
-
+ 
     def sitebot(self):
 
         url = "https://gyms.vertical-life.info/intellighenzia-project-asd/checkins#/service/custom-1/74/2023-11-30"
@@ -19,6 +19,8 @@ class sitebot:
         OrarioMax = 0
         OrarioMin = 460
         news=["","","","","","","","","","",""]
+        email="@gmail.com"
+        password=""
 
         while True:
 
@@ -29,7 +31,7 @@ class sitebot:
             liberi = search(url,OrarioMax,OrarioMin,setup_istance.driver).liberi
 
 
-            ciao=output(liberi,news)
+            ciao=output(liberi,news,email,password)
             news=ciao.ottieni_array()
 
             time.sleep(60)
