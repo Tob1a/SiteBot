@@ -13,21 +13,16 @@ class sitebot:
     def __init__(self) -> None:
         pass
  
-    def sitebot(self,url,OrarioMax,OrarioMin,email,password):
+    def sitebot(self,url,PATH,OrarioMax,OrarioMin,email,password):
         
         self.url = url
+        self.PATH=PATH
         self.OrarioMax = OrarioMax
         self.OrarioMin = OrarioMin
         self.email = email
         self.password = password
-
-        self.url = "https://gyms.vertical-life.info/intellighenzia-project-asd/checkins#/service/custom-1/74/2023-11-30"
-        PATH = "/home/tobu/Scaricati/chromedriver-linux64/chromedriver"
-        self.OrarioMax = 0
-        self.OrarioMin = 460
+        
         news=["","","","","","","","","","",""]
-        self.email="@gmail.com"
-        self.password=""
 
         
 
@@ -37,7 +32,7 @@ class sitebot:
         while True:
 
 
-            setup_istance = setup(PATH)
+            setup_istance = setup(self.PATH)
 
 
             liberi = search(self.url,self.OrarioMax,self.OrarioMin,setup_istance.driver).liberi
@@ -56,9 +51,9 @@ class sitebot:
 
     def main(self):
         Input = inputdata()
-        url, OrarioMax, OrarioMin, email, password = Input.get_input()
+        url, PATH, OrarioMax, OrarioMin, email, password = Input.get_input()
         
-        thread = threading.Thread(target=self.sitebot(url,OrarioMax,OrarioMin,email,password))
+        thread = threading.Thread(target=self.sitebot(url,PATH,OrarioMax,OrarioMin,email,password))
         thread.daemon = True
         thread.start()
         
