@@ -1,10 +1,11 @@
 from email.message import EmailMessage
 import ssl
 from smtplib import SMTP_SSL
+from smtplib import SMTPAuthenticationError
 
 class mail():
     
-    def __init__(self,indirizzo,password,contenuto) -> None:
+    def __init__(self,indirizzo,password,contenuto):
         self.email_reciver=indirizzo
         self.subject="SiteBot'"
         self.body="""
@@ -21,10 +22,15 @@ class mail():
 
 
 
-        #creazione dell ssl per la connessione
-        context = ssl.create_default_context()
+        try:
+            #creazione dell ssl per la connessione
+            context = ssl.create_default_context()
 
-        #connessione
-        with SMTP_SSL('smtp.gmail.com',465, context=context) as smtp:
-            smtp.login(indirizzo,password)
-            smtp.sendmail(indirizzo,self.email_reciver,em.as_string())
+            #connessione
+            with SMTP_SSL('smtp.gmail.com',465, context=context) as smtp:
+                smtp.login(indirizzo,password)
+                smtp.sendmail(indirizzo,self.email_reciver,em.as_string())
+        except SMTPAuthenticationError as e:
+            print("Errore durante l'autenticazione SMTP:", e)
+        except Exception as e:
+            print("Si e' verificato un errore durante l'invio della mail ", e)
