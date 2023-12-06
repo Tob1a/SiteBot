@@ -10,13 +10,10 @@ import threading
 
 class sitebot:
 
-    def __init__(self) -> None:
-        pass
  
-    def sitebot(self,url,PATH,OrarioMax,OrarioMin,email,password):
+    def sitebot(self,url,OrarioMax,OrarioMin,email,password):
         
         self.url = url
-        self.PATH=PATH
         self.OrarioMax = OrarioMax
         self.OrarioMin = OrarioMin
         self.email = email
@@ -32,7 +29,7 @@ class sitebot:
         while True:
 
 
-            setup_istance = setup(self.PATH)
+            setup_istance = setup()
 
 
             liberi = search(self.url,self.OrarioMax,self.OrarioMin,setup_istance.driver).liberi
@@ -51,9 +48,9 @@ class sitebot:
 
     def main(self):
         Input = inputdata()
-        url, PATH, OrarioMax, OrarioMin, email, password = Input.get_input()
+        url, OrarioMax, OrarioMin, email, password = Input.get_input()
         
-        thread = threading.Thread(target=self.sitebot(url,PATH,OrarioMax,OrarioMin,email,password))
+        thread = threading.Thread(target=self.sitebot(url,OrarioMax,OrarioMin,email,password))
         thread.daemon = True
         thread.start()
         
