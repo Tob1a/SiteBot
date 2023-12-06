@@ -1,4 +1,4 @@
-# Controlla la Disponibilità di Posti in una Palestra di Arrampicata
+# Controlla la Disponibilità di Posti ed effettua delle prenotazioni in una Palestra di Arrampicata
 
 ## Descrizione
 Questo programma, realizzato in Python, consente di verificare la disponibilità dei posti in una palestra di arrampicata specifica. Utilizza la libreria Selenium per effettuare lo scraping (raschiamento) del sito web della palestra, controllando costantemente lo stato della prenotazione dei posti e notificando all'utente quando si liberano posti disponibili.
