@@ -5,7 +5,7 @@ Questo programma, realizzato in Python, consente di verificare la disponibilità
 
 ## Funzionalità
 - **Controllo della Disponibilità:** Il programma effettua automaticamente una scansione del sito web della palestra per controllare la disponibilità dei posti utilizzando Selenium.
-- **Notifiche:** Quando vengono rilevati posti disponibili, il programma invia notifiche all'utente per informarlo.
+- **Notifiche:** Quando vengono rilevati posti disponibili, il programma invia delle email e un output a terminale all'utente per informarlo.
 
 ## Requisiti
 - Python 3.x
