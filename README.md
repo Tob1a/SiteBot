@@ -10,6 +10,9 @@ Questo programma, realizzato in Python, consente di verificare la disponibilità
 ## Requisiti
 - Python 3.x
 - Dipendenze esterne elencate nel file `requirements.txt`, tra cui la libreria `Selenium`.
+- Scarica il corretto `chromedriver` per la tua versione di Chrome utilizzando [questo link](https://googlechromelabs.github.io/chrome-for-testing/).
+  - Sposta il file scaricato nella cartella `drivers`.
+  - Rinomina il file come `chromedriver_nomedelsistemaoperativochestateusando`.
 
 ## Installazione e Utilizzo
 1. Clona o scarica il repository sul tuo computer.
